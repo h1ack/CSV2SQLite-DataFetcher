@@ -8,8 +8,8 @@ import os
 Project_path = os.path.dirname(os.path.abspath(__file__))
 
 config = {
-    "file_csv": f"{Project_path}/data/data.csv",
-    "outfile": f"{Project_path}/data/data.db"
+    "file_csv": f"{Project_path}\\..\\data\\data.csv",
+    "outfile": f"{Project_path}\\..\\data\\data.db"
 }
 
 def convert():
