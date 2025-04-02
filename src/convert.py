@@ -2,7 +2,7 @@
 
 import sqlite3
 import pandas as pd
-import cl
+import src.cl as cl
 
 config = {
     "file_csv": "../data/data.csv",
