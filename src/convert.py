@@ -5,7 +5,7 @@ import pandas as pd
 import src.cl as cl
 import os
 
-Project_path = os.path.abspath(__file__)
+Project_path = os.path.dirname(os.path.abspath(__file__))
 
 config = {
     "file_csv": f"{Project_path}/data/data.csv",
