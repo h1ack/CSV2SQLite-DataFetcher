@@ -6,8 +6,8 @@ import src.cl as cl
 import os
 
 config = {
-    "file_csv": "../data/data.csv",
-    "outfile": "../data/data.db"
+    "file_csv": "/data/data.csv",
+    "outfile": "/data/data.db"
 }
 
 def convert():
