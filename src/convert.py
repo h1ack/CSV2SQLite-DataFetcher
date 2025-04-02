@@ -16,7 +16,8 @@ def convert():
     print(cl.yellow + "•" + cl.reset + " Converting CSV to SQLite...")
 
     if not os.path.exists(config['file_csv']):
-        print(cl.red + "•" + cl.reset + f"Missing {config["outfile"]}")
+        print(cl.red + "•" + cl.reset + f"Missing {config["file_csv"]}")
+        print(os.path.abspath(config["file_csv"]))
     else:
         conn = sqlite3.connect(config["outfile"])
         csv_file = config["file_csv"]

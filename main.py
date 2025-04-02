@@ -10,7 +10,12 @@ config = {
     "outfile": "/data/data.db"
 }
 
+
+
 def search_in_db(search_value):
+
+    print(os.path.abspath(config["outfile"]))
+
     if not os.path.exists(config["outfile"]):
         convert.convert()
     else:
