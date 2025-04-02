@@ -7,12 +7,13 @@ import src.convert as convert
 import os
 
 config = {
-    "outfile": "./data/data.db"
+    "outfile": "/data/data.db"
 }
 
 def search_in_db(search_value):
     if not os.path.exists(config["outfile"]):
-        print(cl.red + "•" + cl.reset + " Database does not exist.")
+        convert.convert()
+    else:
         cm = input(cl.yellow + "•" + cl.reset + f' Do you want to replace "{config["outfile"]}" ? (y/n): ')
         if cm.lower() == 'y':
             os.remove(config["outfile"])
@@ -21,9 +22,6 @@ def search_in_db(search_value):
         elif cm.lower() == 'n':
             print(cl.red + "•" + cl.reset + " Database not removed.")
             return None
-    else:
-        print(cl.blue + "•" + cl.reset + " Fetching DataBases.")
-        convert.convert()
 
     conn = sqlite3.connect(config["outfile"])
     cursor = conn.cursor()
