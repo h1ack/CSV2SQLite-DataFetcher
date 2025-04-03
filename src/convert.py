@@ -25,8 +25,10 @@ def convert():
         csv_file = config["file_csv"]
         chunk_size = 500000  
 
-    for chunk in pd.read_csv(csv_file, chunksize=chunk_size):
+    for chunk in pd.read_csv(csv_file, chunksize=chunk_size, encoding="ISO-8859-1"):
         chunk.to_sql("data_table", conn, if_exists="append", index=False)
+
+
 
     conn.execute("CREATE INDEX IF NOT EXISTS idx_column ON data_table (column_name);")
     conn.commit()
